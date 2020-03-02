@@ -5,6 +5,7 @@ import { render, cleanup, fireEvent } from "@testing-library/react";
 import { Button } from "../index";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "../../../theme";
+import MuiButton from "@material-ui/core/Button"
 
 const sandbox = sinon.createSandbox();
 const { random: { number }, lorem: { word, words } } = faker;
@@ -17,6 +18,7 @@ describe("Button Unit Tests", () => {
 
   it("should render", () => {
     // Arrange
+    sandbox.spy(React, "createElement");
 
     // Act
     const { container, debug } = render(
@@ -27,6 +29,7 @@ describe("Button Unit Tests", () => {
 
     // Assert
     expect(container.querySelector("button")).toBeInTheDocument();
+    expect((React.createElement as any).calledWith(MuiButton)).toBe(true);
   });
 
 });
