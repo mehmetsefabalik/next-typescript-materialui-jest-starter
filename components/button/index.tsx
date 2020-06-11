@@ -1,15 +1,18 @@
 import React, { FunctionComponent } from "react";
-import MuiButton from "@material-ui/core/Button"
-import { useTheme } from "@material-ui/core";
+import MuiButton from "@material-ui/core/Button";
 
-interface IProps {
+interface Props {
   color: "primary" | "secondary";
   name: string;
-};
+}
 
-const Button: FunctionComponent<IProps> = ({ color, name }) => {
-  return <>
-    <MuiButton color={color} variant="contained">{name}</MuiButton>
-  </>;
+const Button: FunctionComponent<Props> = ({ color, name }) => {
+  return (
+    <>
+      <MuiButton color={color} variant="contained">
+        {name}
+      </MuiButton>
+    </>
+  );
 };
 export { Button };
