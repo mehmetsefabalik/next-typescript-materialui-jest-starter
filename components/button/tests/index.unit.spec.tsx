@@ -1,5 +1,5 @@
 import React from "react";
-import sinon from "sinon";
+import sinon, { SinonStub } from "sinon";
 import faker from "faker";
 import { render, cleanup } from "@testing-library/react";
 import { Button } from "../index";
@@ -31,6 +31,6 @@ describe("Button Unit Tests", () => {
 
     // Assert
     expect(container.querySelector("button")).toBeInTheDocument();
-    expect((React.createElement as any).calledWith(MuiButton)).toBe(true);
+    expect((React.createElement as SinonStub).calledWith(MuiButton)).toBe(true);
   });
 });
