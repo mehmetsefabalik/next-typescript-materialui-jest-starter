@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import MuiButton from "@material-ui/core/Button";
+import MuiButton from "@mui/material/Button";
 import style from "./style.module.scss";
 
 interface Props {
